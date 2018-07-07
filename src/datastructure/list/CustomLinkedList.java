@@ -15,7 +15,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
     private Node<T> head;
     // tail is the last element
     private Node<T> tail;
-    private int length=0;
+    private int length = 0;
 
 
     @Override
@@ -48,13 +48,13 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public boolean add(T t) {
-        if (isEmpty()){
-            head=new Node<>(t,null);
-            tail=head;
+        if (isEmpty()) {
+            head = new Node<>(t, null);
+            tail = head;
 
-        }else{
-            tail.setNext(new Node<>(t,null));
-            tail=tail.getNext();
+        } else {
+            tail.setNext(new Node<>(t, null));
+            tail = tail.getNext();
         }
         length++;
         return true;
@@ -69,19 +69,19 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
     @Override
     public void clear() {
         head = null;
-        tail=null;
+        tail = null;
         length = 0;
     }
 
     @Override
     public T get(int index) {
-        if (index<0 || index>=size() ){
+        if (index < 0 || index >= size()) {
             throw new IndexOutOfBoundsException();
         }
-        if (index<size()-1){
-            Node<T> current=head;
-            for (int j=0;j<index;j++){
-                current=current.getNext();
+        if (index < size() - 1) {
+            Node<T> current = head;
+            for (int j = 0; j < index; j++) {
+                current = current.getNext();
             }
             return current.getData();
         }
@@ -98,34 +98,34 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public void add(int index, T element) {
-       if (index<0 || index>size()){
-           throw new IndexOutOfBoundsException();
-       }
-       if (index==size()-1){
-           add(element);
-           return;
-       }
-       if (index==0){
-           head=new Node<>(element,head);
-       }else {
-           Node<T> current=head;
-           for (int j=0;j<index-1;j++){
-               current=current.getNext();
-           }
-           current.setNext(new Node<>(element,current.getNext()));
-       }
-       length++;
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (index == size() - 1) {
+            add(element);
+            return;
+        }
+        if (index == 0) {
+            head = new Node<>(element, head);
+        } else {
+            Node<T> current = head;
+            for (int j = 0; j < index - 1; j++) {
+                current = current.getNext();
+            }
+            current.setNext(new Node<>(element, current.getNext()));
+        }
+        length++;
     }
 
     @Override
     public T remove(int index) {
         if (index < 0 || index >= size())
             throw new IndexOutOfBoundsException();
-        Iterator<T>iterator=this.iterator();
-        for (int j=0;index<j;j++){
+        Iterator<T> iterator = this.iterator();
+        for (int j = 0; index < j; j++) {
             iterator.next();
         }
-        T t =iterator.next();
+        T t = iterator.next();
         iterator.remove();
         return t;
     }
@@ -141,49 +141,55 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
      */
     private class CustomLinkedListIterator<E> implements Iterator<E> {
 
-        private Node<T>current;
-
+        private Node<T> current;
+        private Node<T> previous;
+        private Node<T> beforePrevious;
+        private  boolean removeCalledElement;
 
 
         public CustomLinkedListIterator() {
-            current=head;
+            current = head;
+            previous = null;
+            beforePrevious = null;
+            removeCalledElement=false;
         }
 
         @Override
         public boolean hasNext() {
-             /* (TODO Starterkit 1) Please introduce a sensible implementation */
-            return false;
+
+            return current != null;
         }
 
         @Override
         public E next() {
-         if (current==null){
-             throw new NoSuchElementException();
-         }
+            if (current == null) {
+                throw new NoSuchElementException();
+            }
 
-         E temp= (E) current.getData();
-         current=current.getNext();
-         return temp;
+            E temp = (E) current.getData();
+            beforePrevious = previous;
+            previous = current;
+            current = current.getNext();
+            removeCalledElement=false;
+            return temp;
 
         }
 
         @Override
         public void remove() {
-             /* (TODO Starterkit 1)Please introduce a sensible implementation */
+            if (previous == null) {
+                throw new IllegalStateException();
+            }
+            if (beforePrevious == null) {
+                head = beforePrevious;
+            } else {
+                beforePrevious.setNext(current);
+            }
+            length--;
+            removeCalledElement=true;
         }
     }
-
-
-    public static void main(String[] args) {
-
-        LinkedList list = new LinkedList();
-
-
-        // add some elements
-        list.add("Hello");
-        list.add(2);
-        list.add("Chocolate");
-        list.add("10");
-
-    }
 }
+
+
+
