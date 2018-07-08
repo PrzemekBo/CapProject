@@ -77,5 +77,13 @@ public class CustomLinkedListTest {
 
     }
 
+    @Test
+    public void containTest(){
+        list.add(56);
+        list.add(182);
+        list.add(42);
+        assertEquals(true,list.contains(182));
+    }
+
 
 }

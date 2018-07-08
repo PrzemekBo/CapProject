@@ -62,7 +62,25 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public boolean remove(Object o) {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
+        if(contains(o)) {
+
+            Node<T> temp = head;
+            for (int i = 0; i < length; i++) {
+                if (o.equals(temp.data)) {
+                    if(temp.next == null){
+                        temp = null;
+                        length--;
+                        return true;
+                    }else {
+                        temp.data = temp.next.data;
+                        temp.next = temp.next.next;
+                        length--;
+                        return true;
+                    }
+                }
+                temp = temp.next;
+            }
+        }
         return false;
     }
 
@@ -213,7 +231,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
                 beforePrevious.setNext(current);
             }
             length--;
-            removeCalledElement=true;
+            removeCalledElement =true;
         }
     }
 }
