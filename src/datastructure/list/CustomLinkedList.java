@@ -128,15 +128,24 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public T remove(int index) {
-        if (index < 0 || index >= size())
+        if(index>= size())
             throw new IndexOutOfBoundsException();
-        Iterator<T> iterator = this.iterator();
-        for (int j = 0; index < j; j++) {
-            iterator.next();
+        Node<T> temp = head;
+
+        if(index == 0){
+            Node<T> prev = temp;
+            head = temp.next;
+            length--;
+            return prev.data;
         }
-        T t = iterator.next();
-        iterator.remove();
-        return t;
+
+        for(int i = 0; i < (index-1); i++){
+            temp = temp.next;
+        }
+        Node<T> prev = temp.next;
+        temp.next = temp.next.next;
+        length--;
+        return  prev.data;
     }
 
 

@@ -66,4 +66,16 @@ public class CustomLinkedListTest {
     }
 
 
+    @Test
+    public void removeTest(){
+        list.add(4);
+        list.add(3);
+        list.add(42);
+        list.add(44);
+        list.remove(2);
+        assertEquals(3,list.size());
+
+    }
+
+
 }
