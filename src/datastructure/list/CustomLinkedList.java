@@ -130,12 +130,21 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         return t;
     }
 
+
+    //czy moyemz uzywac metpdz java utils
     @Override
     public int indexOf(Object o) {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return 0;
+        if (contains(o)){
+            Node<T>temp=head;
+            for (int i=0;i<size();i++){
+                if (temp.equals(o)){
+                    return i;
+                }
+                temp=temp.next;
+            }
+        }
+        return -1;
     }
-
     /**
      * Iterator for CustomLinkedList
      */
