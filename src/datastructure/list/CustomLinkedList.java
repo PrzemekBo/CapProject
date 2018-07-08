@@ -92,8 +92,17 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public T set(int index, T element) {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return null;
+        if (index < 0 || index >= size()){
+            throw new IndexOutOfBoundsException();
+        }
+        Node<T>temp=head;
+        for (int i=0;i<size();i++){
+            temp=temp.next;
+        }
+
+        Node<T>previous=temp;
+        previous.data=element;
+        return (T) previous;
     }
 
     @Override
