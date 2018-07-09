@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+import java.util.Iterator;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -17,6 +19,8 @@ public class CustomLinkedListTest {
     public void setup() {
         list = new CustomLinkedList<>();
     }
+
+
 
 
     @Test
@@ -83,6 +87,12 @@ public class CustomLinkedListTest {
         list.add(182);
         list.add(42);
         assertEquals(true,list.contains(182));
+    }
+
+    public void iteratorRemove(){
+      //  Iterator<>iterator;
+
+
     }
 
 

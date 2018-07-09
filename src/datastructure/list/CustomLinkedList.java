@@ -167,7 +167,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
     }
 
 
-    //czy moyemz uzywac metpdz java utils
+
     @Override
     public int indexOf(Object o) {
         if (contains(o)){
@@ -201,8 +201,11 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
         @Override
         public boolean hasNext() {
+            if (current.getNext()!=null){
+                return true;
+            }
 
-            return current != null;
+            return false;
         }
 
         @Override
