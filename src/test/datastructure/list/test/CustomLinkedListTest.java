@@ -6,10 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import java.util.Iterator;
+
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+
 
 
 public class CustomLinkedListTest {
@@ -129,6 +129,20 @@ public class CustomLinkedListTest {
 
 
         assertEquals(4,list.size());
+    }
+
+
+    @Test
+    public void shouldReturnindexOf(){
+
+
+        list.add(5);
+        list.add(6);
+        list.add(0);
+        list.add(53);
+
+
+        assertEquals(3,list.indexOf(53));
     }
 
 

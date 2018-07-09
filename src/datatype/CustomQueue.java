@@ -16,11 +16,14 @@ public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
     @Override
     public int size() {
         return storage.size();
+
+        //TODO yrobione testy
     }
 
     @Override
     public boolean isEmpty() {
         return size()==0;
+        //TODO Ymozna ladniej testy
     }
 
     @Override

@@ -6,25 +6,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Main {
+
     public static void main(String[] args) {
 
+        CustomLinkedList<Integer>list=new CustomLinkedList<>();
+        list.add(5);
+        list.add(4);
+        list.add(5);
 
-     /*   CustomArrayList<Integer>arrayList=new CustomArrayList<>();
-        arrayList.add(3);
-        arrayList.add(4);
-        arrayList.add(36);
-        arrayList.indexOf(4);
-        System.out.println(arrayList.indexOf(4));
-*/
-
-
-      //  Iterator iterator
-
-        }
+        System.out.println(4);
     }
-
-
-
-
-
-  //  int length = 0;
+    }

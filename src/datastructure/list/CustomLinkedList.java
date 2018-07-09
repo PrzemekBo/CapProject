@@ -127,6 +127,8 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         Node<T> previous = tmp;
         tmp.data = element;
         return (T) previous;
+
+        //TODO yrobione testy
     }
 
     @Override
@@ -178,19 +180,18 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public int indexOf(Object o) {
-        if (contains(o)){
-            Node<T>temp=head;
-            for (int i=0;i<size();i++){
-                if (temp.equals(o)){
+        if(contains(o)) {
+            Node<T> tmp = head;
+            for (int i = 0; i < length; i++) {
+                if(tmp.equals(o)){
                     return i;
                 }
-                temp=temp.next;
-
-                //TODO brak testow
+                tmp = tmp.next;
             }
         }
         return -1;
     }
+
     /**
      * Iterator for CustomLinkedList
      */
