@@ -27,7 +27,9 @@ public class CustomLinkedListTest {
     public void shouldShowSize() {
 
         //given
+
         //when
+
         //then
 
         //given
@@ -44,38 +46,53 @@ public class CustomLinkedListTest {
 
     }
     @Test
-    public void isEmptyTest(){
-        int result=list.size();
-        assertEquals(0,result);
+    public void shouldBeEmpty(){
+
+        Integer CONSTANT_ZERO=0;
+
+        Integer result=list.size();
+        assertEquals(CONSTANT_ZERO,result);
+
+        //TODO nie jestem pewnz cz dobrye cz powinno byc true
 
     }
 
     @Test
-    public void clearTest(){
+    public void shouldclear(){
 
+        Integer CONSTANT_ZERO=0;
+        //given
         list.add(2);
         list.add(3);
         list.add(4);
         list.add(9);
-
         list.clear();
 
-        int result=list.size();
-        assertEquals(0,result);
+        //when
+        Integer result = list.size();
+
+        //then
+        assertEquals (CONSTANT_ZERO,result);
+
+
 
 
     }
 
     @Test
-    public void getTest(){
-        int ymienna=4;
+    public void shouldGet(){
+        Integer CONSTANT_FOUR=4;
 
-        list.add(ymienna);
-        list.add(3);
+        //given
+        list.add(32);
+        list.add(CONSTANT_FOUR);
+        list.add(4);
 
-        list.get(1);
+        //when
+        Integer result = list.get(1);
 
-        //assertEquals(ymienna,list.get(1);)
+        //then
+        assertEquals(CONSTANT_FOUR,result);
     }
 
 
@@ -91,11 +108,12 @@ public class CustomLinkedListTest {
     }
 
     @Test
-    public void containTest(){
+    public void shouldContain(){
         list.add(56);
         list.add(182);
         list.add(42);
         assertEquals(true,list.contains(182));
+        //TODO mozna troche ladniej
     }
 
     public void iteratorRemove(){

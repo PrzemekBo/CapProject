@@ -22,15 +22,19 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
     public int size() {
         return this.length;
 
+        //TODO zroibone testy
+
     }
 
     @Override
     public boolean isEmpty() {
         return length == 0;
     }
+    //TODO zroibone testy
 
     @Override
     public boolean contains(Object o) {
+        //TODO moyna yrobi ladniej
         for (T t : this) {
             if (o == null ? t == null : o.equals(t)) {
                 return true;
@@ -225,8 +229,8 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
         @Override
         public void remove() {
-            if (previous == null) {
-                throw new IllegalStateException();
+                        if (previous == null) {
+                            throw new IllegalStateException();
             }
             if (beforePrevious == null) {
                 head = beforePrevious;

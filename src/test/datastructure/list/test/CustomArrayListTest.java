@@ -34,7 +34,9 @@ public class CustomArrayListTest {
         //then
 
         assertTrue(CONSTANT_TWO.equals(i));
-
+//given
+//when
+        //then
 
 
     }

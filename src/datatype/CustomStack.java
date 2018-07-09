@@ -34,11 +34,6 @@ public class CustomStack<T> extends AbstractCustomStackAdapter<T> {
 
 
 
-
-
-
-
-
     @Override
     public int size() {
         return storage.size();
