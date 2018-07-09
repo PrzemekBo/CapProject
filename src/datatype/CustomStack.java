@@ -1,5 +1,6 @@
 package datatype;
 
+import java.util.EmptyStackException;
 import java.util.List;
 
 /**
@@ -15,14 +16,28 @@ public class CustomStack<T> extends AbstractCustomStackAdapter<T> {
 
     @Override
     public void push(T t) {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
+        storage.add(t);
+
     }
 
     @Override
     public T pop() {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return null;
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        T t = storage.get(size() - 1);
+        storage.remove(size() - 1);
+        return t;
+
+
     }
+
+
+
+
+
+
+
 
     @Override
     public int size() {
@@ -32,6 +47,6 @@ public class CustomStack<T> extends AbstractCustomStackAdapter<T> {
     @Override
     public boolean isEmpty() {
 
-        return isEmpty();
+        return storage.isEmpty();
     }
 }
