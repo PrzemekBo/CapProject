@@ -26,13 +26,12 @@ public class CustomStack<T> extends AbstractCustomStackAdapter<T> {
 
     @Override
     public int size() {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return 0;
+        return storage.size();
     }
 
     @Override
     public boolean isEmpty() {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return false;
+
+        return isEmpty();
     }
 }
