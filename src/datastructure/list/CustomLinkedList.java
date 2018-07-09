@@ -34,11 +34,12 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public boolean contains(Object o) {
-        //TODO moyna yrobi ladniej
+        //TODO NIE uwzglednia ostatniego
         for (T t : this) {
             if (o == null ? t == null : o.equals(t)) {
                 return true;
             }
+
         }
         return false;
     }
@@ -62,6 +63,8 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         }
         length++;
         return true;
+
+        //TODO yrobione testy
     }
 
     @Override
@@ -114,16 +117,15 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public T set(int index, T element) {
-        if (index < 0 || index >= size()){
+        if (index < 0 || index >= size()) {
             throw new IndexOutOfBoundsException();
         }
-        Node<T>temp=head;
-        for (int i=0;i<size();i++){
-            temp=temp.next;
+        Node<T> tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
         }
-
-        Node<T>previous=temp;
-        previous.data=element;
+        Node<T> previous = tmp;
+        tmp.data = element;
         return (T) previous;
     }
 
@@ -168,6 +170,8 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         temp.next = temp.next.next;
         length--;
         return  prev.data;
+
+        //TODO testy zrobione
     }
 
 
@@ -181,6 +185,8 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
                     return i;
                 }
                 temp=temp.next;
+
+                //TODO brak testow
             }
         }
         return -1;

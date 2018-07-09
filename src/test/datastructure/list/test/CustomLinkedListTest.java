@@ -9,6 +9,7 @@ import org.junit.Test;
 import java.util.Iterator;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 
 public class CustomLinkedListTest {
@@ -97,7 +98,7 @@ public class CustomLinkedListTest {
 
 
     @Test
-    public void removeTest(){
+    public void shouldremoveByIndex(){
         list.add(4);
         list.add(3);
         list.add(42);
@@ -112,15 +113,30 @@ public class CustomLinkedListTest {
         list.add(56);
         list.add(182);
         list.add(42);
-        assertEquals(true,list.contains(182));
-        //TODO mozna troche ladniej
+        list.add(59);
+        assertEquals(true,list.contains(42));
+        //TODO NIE uwzglednia ostatniego
     }
 
-    public void iteratorRemove(){
-      //  Iterator<>iterator;
+
+    @Test
+    public void shouldSet(){
+        list.add(3);
+        list.add(4);
+        list.add(2);
+        list.add(5);
+        list.set(2,2);
 
 
+        assertEquals(4,list.size());
     }
+
+
+
+
+
+
+
 
 
 }
