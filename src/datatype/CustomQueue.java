@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
     List<T> storage = null;
+    //TODO cczy ymieniac na array liste
 
     public CustomQueue(List<T> storage) {
         this.storage = storage;
@@ -14,20 +15,20 @@ public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
 
     @Override
     public int size() {
-          /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return 0;
+        return storage.size();
     }
 
     @Override
     public boolean isEmpty() {
-          /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return false;
+        return size()==0;
     }
 
     @Override
     public boolean add(T t) {
           storage.add(t);
             return true;
+
+            //TODO YRObic warunki wyjatki
     }
 
     @Override
