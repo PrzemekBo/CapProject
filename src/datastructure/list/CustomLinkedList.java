@@ -104,7 +104,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
             return current.getData();
         }
         return tail.getData();
-
+//<obaaczc
 
     }
 

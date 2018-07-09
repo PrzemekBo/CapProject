@@ -24,13 +24,22 @@ public class CustomLinkedListTest {
 
 
     @Test
-    public void sizeTest() {
+    public void shouldShowSize() {
+
+        //given
+        //when
+        //then
+
+        //given
         list.add(2);
         list.add(3);
+        list.add(5);
 
+        //when
+        Integer result = list.size();
 
-        int result = list.size();
-        assertEquals (2,list.size());
+        //then
+        assertEquals (3,list.size());
 
 
     }

@@ -36,6 +36,7 @@ public class CustomArrayListTest {
         assertTrue(CONSTANT_TWO.equals(i));
 
 
+
     }
 
     @Test

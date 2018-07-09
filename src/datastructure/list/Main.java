@@ -1,19 +1,28 @@
 package datastructure.list;
 
+
+
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
 
-        LinkedList<String>linkedList=new LinkedList<>();
-       // linkedList.add()
 
-        Node front=new Node(25,null);
-        System.out.println(front);
+     /*   CustomArrayList<Integer>arrayList=new CustomArrayList<>();
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(36);
+        arrayList.indexOf(4);
+        System.out.println(arrayList.indexOf(4));
+*/
 
 
+      //  Iterator iterator
+
+        }
     }
-}
+
 
 
 

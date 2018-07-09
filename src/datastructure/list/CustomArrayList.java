@@ -1,6 +1,7 @@
 package datastructure.list;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * List based on the table
@@ -91,9 +92,9 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
         decreaseTheSize();
         for (Object object:array){
             if (o.equals(object)){
-                remove(o);
+                remove(indexOf(o));
                 return true;
-                /* (TODO Starterkit 1) Please introduce a sensible implementation */
+
 
             }
         }
@@ -118,14 +119,35 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public T set(int index, T element) {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return null;
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException();
+        }
+            T temp = get(index);
+            array[index] = element;
+            return temp;
+
+            //nie jstem ewnz tego
+
+
     }
 
     @Override
     public void add(int index, T element) {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
-    }
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException();
+            // add the element to get the resizing
+        }
+            add(element);
+
+            // shift the elements
+            for (int i = length - 1; i > index; i--) {
+                array[i] = array[i - 1];
+            }
+            // put the new one in the right place
+            array[index] = element;
+        }
+
+
 
     @Override
     public T remove(int index) {
@@ -145,28 +167,44 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public int indexOf(Object o) {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return 0;
+        int index = -1;
+        for(int i = 0 ; i < length; i++) {
+            if(array[i].equals(o)) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
-
     /**
      * Iterator for CustomArrayList
      */
     private class CustomArrayListIterator<E> implements Iterator<E> {
+
+        private int length;
+        private int index;
+        private Object[] arrayList;
+
 
         public CustomArrayListIterator(T[] array, int length) {
         }
 
         @Override
         public boolean hasNext() {
-             /* (TODO Starterkit 1) Please introduce a sensible implementation */
-            return false;
+            if (index<=length-1){
+                return false;
+            }
+            return true;
         }
 
         @Override
         public E next() {
-             /* (TODO Starterkit 1) Please introduce a sensible implementation */
-            return null;
+            if (index<=length-1){
+                throw new NoSuchElementException();
+            }
+            index++;
+            return (E) arrayList[index];
+            // nie jstem pewnwien
         }
 
         @Override
@@ -174,4 +212,10 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
              /* (TODO Starterkit 1) Please introduce a sensible implementation */
         }
     }
+
+    public static void main(String[] args) {
+
+    }
 }
+
+
