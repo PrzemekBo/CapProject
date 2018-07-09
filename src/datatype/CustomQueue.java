@@ -27,14 +27,19 @@ public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
     public boolean add(T t) {
           storage.add(t);
             return true;
-
             //TODO YRObic warunki wyjatki
     }
 
     @Override
     public T poll() {
-          /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return null;
+         if (isEmpty()){
+             return null;
+         }else {
+             T t=storage.get(0);
+             storage.remove(0);
+             return t;
+
+         }
     }
 
     @Override
