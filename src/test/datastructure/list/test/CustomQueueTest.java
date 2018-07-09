@@ -5,6 +5,8 @@ import datatype.CustomQueue;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.Queue;
 
 public class CustomQueueTest {
@@ -33,6 +35,36 @@ public class CustomQueueTest {
         assertEquals(true,queue.isEmpty());
     }
 
+    @Test
+    public void shouldRetrievesTheHead() {
+
+
+        Integer CONSTANT_TWELVE=12;
+        //given
+        queue.add(CONSTANT_TWELVE);
+        queue.add(54);
+        queue.add(32);
+        //when
+        Integer i = queue.peek();
+        //then
+        assertTrue(CONSTANT_TWELVE.equals(i));
+
+    }
+    @Test
+    public void shouldRetrievesAndRemoveTheHead() {
+
+        Integer CONSTANT_TWELVE=12;
+
+        //given
+        queue.add(CONSTANT_TWELVE);
+        queue.add(54);
+        queue.add(42);
+
+        //when
+        Integer i=queue.poll();
+        //then
+        assertTrue(CONSTANT_TWELVE.equals(i));
+    }
 
 
 
