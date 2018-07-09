@@ -8,7 +8,6 @@ import java.util.List;
 public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
     List<T> storage = null;
 
-    /* (TODO Starterkit 1) Please introduce a sensible implementation */
     public CustomQueue(List<T> storage) {
         this.storage = storage;
     }
@@ -27,8 +26,8 @@ public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
 
     @Override
     public boolean add(T t) {
-          /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return false;
+          storage.add(t);
+            return true;
     }
 
     @Override
@@ -39,7 +38,10 @@ public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
 
     @Override
     public T peek() {
-          /* (TODO Starterkit 1) Please introduce a sensible implementation */
+        if (isEmpty()){
+            return null;
+        }
+
         return null;
     }
 }
