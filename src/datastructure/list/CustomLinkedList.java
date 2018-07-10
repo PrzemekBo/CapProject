@@ -222,10 +222,8 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
             if (current.getNext()!=null){
                 return true;
             }
-
             return false;
         }
-
         @Override
         public E next() {
             if (current == null) {
@@ -238,9 +236,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
             current = current.getNext();
             removeCalledElement=false;
             return temp;
-
         }
-
         @Override
         public void remove() {
             if (previous == null) {

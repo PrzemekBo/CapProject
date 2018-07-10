@@ -11,7 +11,7 @@ import java.util.Iterator;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.assertFalse;
 
 
 public class CustomLinkedListTest {
@@ -27,21 +27,10 @@ public class CustomLinkedListTest {
 
 
 
-    }
-
-
-
-
-
 
     @Test
-    public void shouldShowSize() {
+    public void shouldExspectCorectSize() {
 
-        //given
-
-        //when
-
-        //then
 
         //given
         list.add(2);
@@ -60,14 +49,17 @@ public class CustomLinkedListTest {
     @Test
     public void shouldBeEmpty() {
 
-        Integer CONSTANT_ZERO = 0;
+        //given
 
-        Integer result = list.size();
-        assertEquals(CONSTANT_ZERO, result);
+        //when
+        Boolean result=list.size()==0;
 
-        //TODO nie jestem pewnz cz dobrye cz powinno byc true
+        //then
+        assertEquals(result,list.isEmpty());
 
     }
+
+
 
     @Test
     public void shouldclear() {
@@ -118,7 +110,7 @@ public class CustomLinkedListTest {
     }
 
     @Test
-    public void shouldContain() {
+    public void shouldContainElement() {
         list.add(56);
         list.add(182);
         list.add(42);
@@ -227,6 +219,28 @@ public class CustomLinkedListTest {
         assertEquals(true,i);
 
 
+    }
+
+    @Test
+    public void shoudCheckIfNextElementExist(){
+
+        CustomLinkedList<Integer> list = new CustomLinkedList<>();
+        list.add(498);
+        list.add(65);
+        list.add(46);
+        list.add(42);
+
+        Iterator<Integer> iterator = list.iterator();
+
+
+
+
+        assertEquals(true,iterator.hasNext());
+        iterator.next();
+
+
+
+       // assertEquals(true,iterator.hasNext());
     }
 
 

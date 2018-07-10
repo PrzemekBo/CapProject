@@ -1,15 +1,18 @@
 package datatype;
 
+import datastructure.list.CustomArrayList;
+import org.junit.Test;
+
 import java.util.List;
 
 /**
  * FIFO queue
  */
 public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
-    List<T> storage = null;
+    CustomArrayList<T> storage = null;
     //TODO cczy ymieniac na array liste
 
-    public CustomQueue(List<T> storage) {
+    public CustomQueue(CustomArrayList<T> storage) {
         this.storage = storage;
     }
 
@@ -54,4 +57,6 @@ public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
         }
 
     }
+
+
 }

@@ -26,13 +26,14 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
         length=0;
 
     }
-
+    //todo ZROBONE
     @Override
     public int size() {
         return length;
 
     }
 
+    //todo ZROBONE
     @Override
     public boolean isEmpty() {
         if (length==0) {
@@ -41,7 +42,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
         }
         return false;
     }
-
+    //todo ZROBONE
     @Override
     public boolean contains(Object o) {
         for (Object object:array){
@@ -101,10 +102,12 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
         return false;
     }
 
+    //todo zrobione
     @Override
     public void clear() {
        length=0;
     }
+
 
     @Override
     public T get(int index) {
@@ -194,7 +197,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
             if (index<=length-1){
                 return false;
             }
-            return true;
+            return index<length;
         }
 
         @Override
@@ -209,13 +212,11 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
 
         @Override
         public void remove() {
-             /* (TODO Starterkit 1) Please introduce a sensible implementation */
+            CustomArrayList.this.remove(--index);
         }
     }
 
-    public static void main(String[] args) {
 
-    }
 }
 
 
