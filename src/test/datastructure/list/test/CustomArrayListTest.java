@@ -102,6 +102,22 @@ public class CustomArrayListTest {
 
     }
 
+    @Test
+    public void shouldGet() {
+        Integer CONSTANT_FOUR = 4;
+
+        //given
+        arrayList.add(32);
+        arrayList.add(CONSTANT_FOUR);
+        arrayList.add(534);
+
+        //when
+        Integer result = arrayList.get(1);
+
+        //then
+        assertEquals(CONSTANT_FOUR, result);
+    }
+
 
 
 }
