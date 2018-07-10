@@ -20,7 +20,7 @@ public class CustomArrayListTest {
     @Test
     public void shouldReturnElementByIndex(){
 
-        Integer CONSTANT_TWO=54;
+        Integer CONSTANT_TWO=2;
 
         //given
         arrayList.add(4);

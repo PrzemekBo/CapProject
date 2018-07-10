@@ -34,15 +34,20 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
     @Override
     public boolean contains(Object o) {
-        //TODO NIE uwzglednia ostatniego
-        for (T t : this) {
-            if (o == null ? t == null : o.equals(t)) {
+        Node<T> temp = head;
+        for(int i = 0; i<length; i++){
+            if(temp.data.equals(o)){
                 return true;
             }
-
+            temp = temp.next;
         }
         return false;
+
+
+
     }
+
+
 
 
     @Override

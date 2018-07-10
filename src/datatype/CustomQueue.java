@@ -47,10 +47,11 @@ public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
 
     @Override
     public T peek() {
-        if (isEmpty()){
+        if(isEmpty()){
             return null;
+        }else{
+            return storage.get(0);
         }
 
-        return null;
     }
 }

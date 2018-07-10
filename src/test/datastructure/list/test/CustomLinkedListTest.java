@@ -6,8 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-
-
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 
@@ -114,7 +113,7 @@ public class CustomLinkedListTest {
         list.add(182);
         list.add(42);
         list.add(59);
-        assertEquals(true,list.contains(42));
+        assertEquals(true,list.contains(59));
         //TODO NIE uwzglednia ostatniego
     }
 
@@ -125,6 +124,7 @@ public class CustomLinkedListTest {
         list.add(4);
         list.add(2);
         list.add(5);
+
         list.set(2,2);
 
 
@@ -136,17 +136,43 @@ public class CustomLinkedListTest {
     public void shouldReturnindexOf(){
 
 
+
+        Integer CONSTANT_TWO=2;
+
+        //given
         list.add(5);
         list.add(6);
-        list.add(0);
+        list.add(2);
         list.add(53);
 
+        //when
 
-        assertEquals(3,list.indexOf(53));
+        Integer i=list.indexOf(2);
+       // assertEquals(3,list.indexOf(2));
+
+        //then
+
+      //  assertTrue(CONSTANT_TWO.equals(i));
+        assertEquals(true,list.indexOf(CONSTANT_TWO));
     }
 
 
 
+
+    //Integer i=list.
+
+    //given
+     //   arrayList.add(4);
+       // arrayList.add(3);
+       // arrayList.add(CONSTANT_TWO);
+       // arrayList.add(45);
+
+    //when
+   // Integer i=arrayList.get(2);
+
+    //then
+
+  //  assertTrue(CONSTANT_TWO.equals(i));
 
 
 
