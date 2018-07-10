@@ -87,7 +87,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
             array=newArray;
         }
     }
-
+    //todo zrobione
     @Override
     public boolean remove(Object o) {
         decreaseTheSize();
@@ -109,6 +109,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
     }
 
 
+    //todo yzrobione
     @Override
     public T get(int index) {
         if (index < 0 || index >= size()){
@@ -119,7 +120,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
 
 
     }
-
+    //todo yzrobione
     @Override
     public T set(int index, T element) {
         if (index < 0 || index >= size()) {
@@ -133,7 +134,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
 
 
     }
-
+    //todo zrobione
     @Override
     public void add(int index, T element) {
         if (index < 0 || index > size()) {
@@ -150,8 +151,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
             array[index] = element;
         }
 
-
-
+        //todo zrobione
     @Override
     public T remove(int index) {
         if(index < 0 || index >= size())
@@ -167,7 +167,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
     }
 
 
-
+    //todo zrobione
     @Override
     public int indexOf(Object o) {
         int index = -1;

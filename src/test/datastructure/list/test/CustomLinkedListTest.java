@@ -99,7 +99,7 @@ public class CustomLinkedListTest {
 
 
     @Test
-    public void shouldremoveByIndex() {
+    public void shouldRemoveByIndex() {
         list.add(4);
         list.add(3);
         list.add(42);
@@ -121,7 +121,7 @@ public class CustomLinkedListTest {
 
 
     @Test
-    public void shouldSet() {
+    public void shouldCorrectSet() {
         list.add(3);
         list.add(4);
         list.add(2);
@@ -145,13 +145,11 @@ public class CustomLinkedListTest {
         list.add(53);
 
         //when
+
         Integer i = list.indexOf(CONSTANT_TWO);
+        //then
         assertEquals(1, list.indexOf(CONSTANT_TWO));
 
-        //then
-
-        //  assertTrue(CONSTANT_TWO.equals(i));
-        // assertEquals(true,list.indexOf(CONSTANT_TWO));
 
     }
     @Test
