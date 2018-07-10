@@ -2,32 +2,39 @@ package datastructure.list;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Filter iterator
  */
 public class FilterIterator<T> implements Iterator<T> {
-    /* (TODO Starterkit 1) Please introduce a sensible implementation */
+    private List<T> list;
+    private int current;
 
     public FilterIterator(List<T> list, Predicate<T> predicate) {
-         /* (TODO Starterkit 1) Please introduce a sensible implementation */
+        this.list = list.stream().filter(predicate).collect(Collectors.toList());
+        this.current = 0;
     }
 
     @Override
     public boolean hasNext() {
-         /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return false;
+        return current < list.size();
+
     }
 
     @Override
     public T next() {
-         /* (TODO Starterkit 1) Please introduce a sensible implementation */
-        return null;
+
+        return list.get(current++);
+
     }
+
 
     @Override
     public void remove() {
-        /* (TODO Starterkit 1) Please introduce a sensible implementation */
+        list.remove(current);
+        throw new UnsupportedOperationException();
     }
 }
