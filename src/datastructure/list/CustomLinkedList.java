@@ -36,13 +36,13 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
     public boolean contains(Object o) {
         Node<T> temp = head;
         for(int i = 0; i<length; i++){
-            if(temp.data.equals(o)){
+            if(temp.getData().equals(o)){
                 return true;
             }
             temp = temp.next;
         }
         return false;
-
+        //TODO Yrobione
 
 
     }
@@ -71,7 +71,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
         //TODO yrobione testy
     }
-
+    //TODO zrobione
     @Override
     public boolean remove(Object o) {
         if(contains(o)) {
@@ -95,7 +95,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         }
         return false;
     }
-
+    //TODO yrobione
     @Override
     public void clear() {
         head = null;
@@ -103,6 +103,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         length = 0;
     }
 
+    //TODo dyiala
     @Override
     public T get(int index) {
         if (index < 0 || index >= size()) {
@@ -116,7 +117,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
             return current.getData();
         }
         return tail.getData();
-//<obaaczc
+
 
     }
 
@@ -136,6 +137,7 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         //TODO yrobione testy
     }
 
+    //TODo zrobione
     @Override
     public void add(int index, T element) {
         if (index < 0 || index > size()) {
@@ -182,13 +184,13 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
     }
 
 
-
+//TODO nie dziala
     @Override
     public int indexOf(Object o) {
         if(contains(o)) {
             Node<T> tmp = head;
             for (int i = 0; i < length; i++) {
-                if(tmp.equals(o)){
+                if(tmp.getData().equals(o)){
                     return i;
                 }
                 tmp = tmp.next;
@@ -241,8 +243,8 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
         @Override
         public void remove() {
-                        if (previous == null) {
-                            throw new IllegalStateException();
+            if (previous == null) {
+                throw new IllegalStateException();
             }
             if (beforePrevious == null) {
                 head = beforePrevious;
@@ -254,6 +256,3 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         }
     }
 }
-
-
-
