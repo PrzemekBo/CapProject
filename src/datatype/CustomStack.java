@@ -9,7 +9,7 @@ import java.util.List;
 public class CustomStack<T> extends AbstractCustomStackAdapter<T> {
     List<T> storage = null;
 
-    /* (TODO Starterkit 1) Please introduce a sensible implementation */
+
     public CustomStack(List<T> storage) {
         this.storage = storage;
     }

@@ -15,7 +15,6 @@ public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
     public CustomQueue(CustomArrayList<T> storage) {
         this.storage = storage;
     }
-
     @Override
     public int size() {
         return storage.size();

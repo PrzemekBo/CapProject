@@ -239,9 +239,9 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         }
         @Override
         public void remove() {
-            if (previous == null) {
-                throw new IllegalStateException();
-            }
+          /*  if (previous == null) {
+                throw new IllegalStateException();*/
+
             if (beforePrevious == null) {
                 head = beforePrevious;
             } else {

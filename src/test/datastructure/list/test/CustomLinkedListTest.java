@@ -202,8 +202,6 @@ public class CustomLinkedListTest {
     @Test
     public void shouldRemoveObject(){
 
-
-
         //given
         list.add(65);
         list.add(2);
@@ -231,8 +229,6 @@ public class CustomLinkedListTest {
         Iterator<Integer> iterator = list.iterator();
 
 
-
-
         assertEquals(true,iterator.hasNext());
         iterator.next();
 
@@ -240,6 +236,48 @@ public class CustomLinkedListTest {
 
        // assertEquals(true,iterator.hasNext());
     }
+
+    @Test
+    public void shoudConfirmLastElement(){
+        CustomLinkedList<Integer> list = new CustomLinkedList<>();
+        list.add(498);
+        list.add(65);
+        list.add(46);
+        list.add(42);
+
+        Iterator<Integer> iterator = list.iterator();
+        iterator.next();
+        iterator.next();
+       iterator.next();
+
+        assertEquals(false,iterator.hasNext());
+
+    }
+
+    @Test
+    public void shouldRemoveElementUsingiterator(){
+        CustomLinkedList<Integer> list = new CustomLinkedList<>();
+        list.add(498);
+        list.add(65);
+        list.add(46);
+        list.add(42);
+
+        Iterator<Integer> iterator = list.iterator();
+        iterator.remove();
+
+        assertTrue(list.size()==3);
+
+    }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void getDontExistElement(){
+
+    list.get(5);
+
+    }
+
+
+
+
 
 
 

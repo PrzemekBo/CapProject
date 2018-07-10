@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Queue;
 
 public class CustomQueueTest {
-    private Queue<Integer> queue = null;
+    private CustomQueue<Integer> queue = null;
 
     @Before
     public void setUp() throws Exception {
@@ -67,6 +67,8 @@ public class CustomQueueTest {
         //then
         assertTrue(CONSTANT_TWELVE.equals(i));
     }
+
+
 
 
 
