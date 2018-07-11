@@ -2,13 +2,12 @@ package test.datastructure.list.test;
 
 import datastructure.list.CustomArrayList;
 import datatype.CustomQueue;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Queue;
+
 
 public class CustomQueueTest {
     private CustomQueue<Integer> queue = null;
@@ -49,7 +48,7 @@ public class CustomQueueTest {
         Integer i = queue.peek();
         //then
         assertTrue(CONSTANT_TWELVE.equals(i));
-        //assertEquals(CONSTANT_TWELVE,queue.peek());
+
 
     }
     @Test

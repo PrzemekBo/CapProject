@@ -126,18 +126,18 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
         if (index < 0 || index >= size()) {
             throw new IndexOutOfBoundsException();
         }
-        Node<T> tmp = head;
+        Node<T> temp = head;
         for (int i = 0; i < index; i++) {
-            tmp = tmp.next;
+            temp = temp.next;
         }
-        Node<T> previous = tmp;
-        tmp.data = element;
+        Node<T> previous = temp;
+        temp.data = element;
         return (T) previous;
 
-        //TODO yrobione testy
+
     }
 
-    //TODo zrobione
+
     @Override
     public void add(int index, T element) {
         if (index < 0 || index > size()) {
@@ -188,12 +188,12 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
     @Override
     public int indexOf(Object o) {
         if(contains(o)) {
-            Node<T> tmp = head;
+            Node<T> temp = head;
             for (int i = 0; i < length; i++) {
-                if(tmp.getData().equals(o)){
+                if(temp.getData().equals(o)){
                     return i;
                 }
-                tmp = tmp.next;
+                temp = temp.next;
             }
         }
         return -1;
@@ -206,15 +206,13 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
 
         private Node<T> current;
         private Node<T> previous;
-        private Node<T> beforePrevious;
-        private  boolean removeCalledElement;
+
 
 
         public CustomLinkedListIterator() {
             current = head;
             previous = null;
-            beforePrevious = null;
-            removeCalledElement=false;
+
         }
 
         @Override
@@ -231,24 +229,20 @@ public class CustomLinkedList<T> extends AbstractCustomListAdapter<T> {
             }
 
             E temp = (E) current.getData();
-            beforePrevious = previous;
-            previous = current;
             current = current.getNext();
-            removeCalledElement=false;
             return temp;
         }
         @Override
         public void remove() {
-          /*  if (previous == null) {
-                throw new IllegalStateException();*/
 
-            if (beforePrevious == null) {
-                head = beforePrevious;
+
+            if (previous == null) {
+                head = previous;
             } else {
-                beforePrevious.setNext(current);
+                previous.setNext(current);
             }
             length--;
-            removeCalledElement =true;
+
         }
     }
 }

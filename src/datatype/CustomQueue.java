@@ -9,30 +9,33 @@ import java.util.List;
  * FIFO queue
  */
 public class CustomQueue<T> extends AbstractCustomQueueAdapter<T> {
-    CustomArrayList<T> storage = null;
-    //TODO cczy ymieniac na array liste
+    List<T> storage = null;
 
-    public CustomQueue(CustomArrayList<T> storage) {
+
+    public CustomQueue(List<T> storage)
+    {
         this.storage = storage;
     }
+
+
+
     @Override
     public int size() {
         return storage.size();
 
-        //TODO yrobione testy
     }
 
     @Override
     public boolean isEmpty() {
         return size()==0;
-        //TODO Ymozna ladniej testy
+
     }
 
     @Override
     public boolean add(T t) {
           storage.add(t);
             return true;
-            //TODO YRObic warunki wyjatki
+
     }
 
     @Override

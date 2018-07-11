@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Iterator;
+import java.util.List;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.*;
@@ -245,12 +246,39 @@ public class CustomArrayListTest {
         list.add(42);
 
         Iterator<Integer> iterator = list.iterator();
+        iterator.next();
         iterator.remove();
+
 
         assertTrue(list.size()==3);
 
     }
 
+    @Test
+    public void shouldIncreaseListSize() {
+
+        for (int i=0;i<1000;i++){
+            arrayList.add(new Integer(i));
+        }
+
+        assertEquals(1000,arrayList.size());
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void shouldDontDeleteFromEmptyList(){
+
+        arrayList.remove(3);
+
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void shouldDontRemoveDontExistElement(){
+
+
+        arrayList.remove(3);
+
+
+    }
 
 
 

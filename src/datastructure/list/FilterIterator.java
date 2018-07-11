@@ -20,6 +20,7 @@ public class FilterIterator<T> implements Iterator<T> {
 
     @Override
     public boolean hasNext() {
+
         return current < list.size();
 
     }
@@ -28,13 +29,11 @@ public class FilterIterator<T> implements Iterator<T> {
     public T next() {
 
         return list.get(current++);
-
     }
-
 
     @Override
     public void remove() {
+
         list.remove(current);
-        throw new UnsupportedOperationException();
     }
 }

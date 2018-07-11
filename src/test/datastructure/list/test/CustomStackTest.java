@@ -47,21 +47,7 @@ public class CustomStackTest {
        assertEquals(true, stack.isEmpty());
     }
 
-  /*  @Test
-    public void shouldRetrievesTheHead() {
 
-
-        Integer CONSTANT_TWELVE = 12;
-        //given
-        stack.push(2);
-        stack.push(54);
-        stack.push(CONSTANT_TWELVE);
-        //when
-        Integer i = stack.peek();
-        //then
-        assertTrue(CONSTANT_TWELVE.equals(i));
-        //assertEquals(CONSTANT_TWELVE,queue.peek());
-*/
     }
 
 

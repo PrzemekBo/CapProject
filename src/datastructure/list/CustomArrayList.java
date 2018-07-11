@@ -26,14 +26,12 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
         length=0;
 
     }
-    //todo ZROBONE
     @Override
     public int size() {
         return length;
 
     }
 
-    //todo ZROBONE
     @Override
     public boolean isEmpty() {
         if (length==0) {
@@ -42,7 +40,6 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
         }
         return false;
     }
-    //todo ZROBONE
     @Override
     public boolean contains(Object o) {
         for (Object object:array){
@@ -87,7 +84,6 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
             array=newArray;
         }
     }
-    //todo zrobione
     @Override
     public boolean remove(Object o) {
         decreaseTheSize();
@@ -102,14 +98,14 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
         return false;
     }
 
-    //todo zrobione
+
     @Override
     public void clear() {
        length=0;
     }
 
 
-    //todo yzrobione
+
     @Override
     public T get(int index) {
         if (index < 0 || index >= size()){
@@ -120,7 +116,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
 
 
     }
-    //todo yzrobione
+
     @Override
     public T set(int index, T element) {
         if (index < 0 || index >= size()) {
@@ -130,28 +126,26 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
             array[index] = element;
             return temp;
 
-            //nie jstem ewnz tego
 
 
     }
-    //todo zrobione
+
     @Override
     public void add(int index, T element) {
         if (index < 0 || index > size()) {
             throw new IndexOutOfBoundsException();
-            // add the element to get the resizing
+
         }
             add(element);
 
-            // shift the elements
+
             for (int i = length - 1; i > index; i--) {
                 array[i] = array[i - 1];
             }
-            // put the new one in the right place
+
             array[index] = element;
         }
 
-        //todo zrobione
     @Override
     public T remove(int index) {
         if(index < 0 || index >= size())
@@ -167,7 +161,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
     }
 
 
-    //todo zrobione
+
     @Override
     public int indexOf(Object o) {
         int index = -1;
@@ -207,7 +201,7 @@ public class CustomArrayList<T> extends AbstractCustomListAdapter<T> {
             }
             index++;
             return (E) arrayList[index];
-            // nie jstem pewnwien
+
         }
 
         @Override
